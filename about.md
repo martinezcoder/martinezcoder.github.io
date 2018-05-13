@@ -4,15 +4,55 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+* [Github](https://github.com/martinezcoder)
+* [Stackoverflow](https://stackoverflow.com/users/1808649/fran-martinez)
+* [LinkedIn](https://www.linkedin.com/in/martinezcoder)
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+## Let me introduce myself
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Hi, my name is **Fran Martinez**. Nice to meet you! I a Web developer from Barcelona, Spain. I started my career in 2005 but it was not until I discovered Ruby that I became a proud developer.
+
+I like all about development culture, from the product definition to development, but I what I most like is to share knowledge and open my mind to other points of view. Every product is the result of a shared artistic process; it's the result of collaborative work, and that's why I like responsible and enthusiastic people, who shares knowledge and who spend his time helping others to improve. This is at least what I try to do.
+
+## **What can I do**
+
+### Ruby on Rails
+
+**5 years** experience with Ruby. From the **full stack** creation of an app to a **PORO** ruby coder. The Ruby community made me be reborn as a developer in 2012. Since then, I have learn the SOLID principles, design patterns, metaprogramming, git, TDD and Agile/Kanban.
+
+I am more focused in the **backend side**, but I am not afraid of doing Javascript or CSS.
 
 
-[jekyll-organization]: https://github.com/jekyll
+### Amazon Web Services
+
+I have been working with <b>SQS</b>, <b>SNS</b>, <b>EC2</b>, <b>S3</b>, <b>Lambda</b>. 
+
+### Relational databases
+
+**Mysql**, **PostgeSQL**, **SQLite**, **Oracle**. **14 years** experience with relational databases. I can do any kind of query! Further, I worked during 3 years with Pro\*C, the C precompiler for Oracle, a really good way to work in a C real-time application that consumes the data from an Oracle Datawarehouse.
+
+
+### Javascript and frameworks
+
+I am very sad to say that I am not an expert here. I know the basis of pure **Javascript**, I know what the **DOM**, the **BOM** and **ECMAScript 6** is, I know how to use OOP with Javascript and I have tried **React** and **Vue**.  But in a commercial environment, I have just used it to add some AJAX responses. I would be the most happiest man in the world if I can do a bit more about this in my next challenge! 
+
+
+### Docker
+
+I started using Docker some years ago. Since then, I always use it. Give me a computer and I will only install Docker to start programming anything. That's the best magic ever!
+
+
+### C/C++
+
+3 years experience working as a backend developer with C and C++ in a client-server application for the main energy company in Spain.
+
+
+
+### Srum/Agile and Kanban workflows
+
+I have worked with **Scrum** and **Kanban**. Using **Jira**, **Pivotal tracker** and **Trello**. I have been scrum master for a team of 7 where I was the team lead.
+
+
+## More about me
+
+I am a very friendly person who likes to learn every day as a way of life. That's why I like semi-remote jobs, in order to have this balance between professional and personal skills. I am a peaceful guy who likes to meet friends, practice a lot of yoga, play the guitar, use renewable energies, and read about programming, philosophy, science and classical novels.

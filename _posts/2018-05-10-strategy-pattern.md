@@ -116,10 +116,8 @@ class Duck < Animal
   private
 
   def try_to_fly
-    if age >= DAYS_TO_FLY && !@can_fly
-      self.extend(Flys::ItFlys)
-      @can_fly = true
-    end
+    return if @can_fly
+    self.extend(Flys::ItFlys) if age >= DAYS_TO_FLY
   end
 end
 ```
