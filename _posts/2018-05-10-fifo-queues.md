@@ -36,7 +36,7 @@ end
 
 class Array
   def to_fifo
-  	FIFOQueue[*self]
+    FIFOQueue[*self]
   end
 end
 ```
