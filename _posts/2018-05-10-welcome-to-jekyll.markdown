@@ -1,25 +1,57 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "FIFO queues!"
 date:   2018-05-10 17:14:47 +0200
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+When I was a C developer we used very frequently **FIFO queues**. **FIFO** means _first input, first output_. This kind of queues have a fixed size. When the queue is full of elements, if a new element is enqueued, the first element enqueued has to fall out (has to be returned and removed from the queue).
 
-Jekyll also offers powerful support for code snippets:
+**How would you implement this behavior with Ruby language?**
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
+Here is how I would do it:
+
+```ruby
+## fifo_queue.rb
+
+class FIFOQueue
+  attr_accessor :size, :arr
+
+  def self.[](*values)
+    obj = self.new(values.size)
+    obj.arr = values
+    obj
+  end
+
+  def initialize(size)
+    @size = size
+    @arr  = Array.new
+  end
+
+  def push(element)
+    arr.push(element)
+    arr.shift if arr.length > size
+  end
 end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+class Array
+  def to_fifo
+  	FIFOQueue[*self]
+  end
+end
+```
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Adding the method `to_fifo` to the `Array` class permits us to create a new Array as we normally do and convert it a **FIFO queue**.
+
+```sh
+> irb -I . -r fifo_queue.rb
+irb> ["a", 2, 3].to_fifo
+=> #<FIFOQueue: @size=3, @arr=["a", 2, 3]>
+irb> b = _
+=> #<FIFOQueue: @size=3, @arr=["a", 2, 3]>
+irb> b.push "b"
+=> "a"
+irb> b.arr
+=> [2, 3, "b"]
+```
+
