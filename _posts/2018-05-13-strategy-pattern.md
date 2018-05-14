@@ -40,13 +40,13 @@ We have two options (**strategies**) to decide to include on each animal: _it ca
 ```ruby
 module Flys
   module ItFlys
-    def fly
+    def self.fly
       puts "I am flying"
     end
   end
 
   module CantFly
-    def fly
+    def self.fly
       puts "I can't fly"
     end
    end
@@ -77,6 +77,59 @@ irb> duck.fly
 "I am flying"
 ```
 
+## Asigning it by injection
+
+We can still go further and apply the behavior on each instance by injection:
+
+```ruby
+module Flys
+  module ItFlys
+    def self.fly
+      puts "I am flying"
+    end
+  end
+
+  module CantFly
+    def self.fly
+      puts "I can't fly"
+    end
+   end
+end
+
+class Animal
+  attr_accessor :fly_behavior
+
+  def initialize(fly_behavior = Flys::CantFly)
+    @fly_behavior = fly_behavior
+  end
+
+  def fly
+    fly_behavior.fly
+  end
+end
+
+class Lion < Animal
+end
+
+class Duck < Animal
+end
+```
+
+```bash
+irb> lion = Lion.new
+irb> lion.fly
+"I can't fly"
+irb> duck = Duck.new(Flys::CantFly)
+irb> duck.fly
+"I can't fly"
+irb> duck.fly_behavior = Flys::ItFlys
+irb> duck.fly
+"I am flying"
+```
+
+For the issue of flying animals, this last way of doing strategy design seems not the most appropiate. All ducks fly, so I personally prefer the previous solution for this case.
+
+But, we have seen that in this last example we have the option to change the _fly_behavior_ of an instance. How could we do this with the code of the previous solution? I will do it in the next example using a **mixin** to change the flying behavior of an instance. That means, overwrite a **singleton method**. 
 
 ## Singleton methods
 
