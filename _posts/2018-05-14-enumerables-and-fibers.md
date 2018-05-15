@@ -3,6 +3,7 @@ layout: post
 title:  "Fibers, Procs and Enumerables"
 date:   2018-05-13 18:00:00 +0200
 categories: jekyll update
+permalink: /enumerables-and-fibers/
 ---
 
 Last day I spend some hours investigating a bit deeply about `Enumerable`. It is that kind of stuff that shows the magic of the **Ruby** language. Once you have the whole control of enumerables, you feel the power of being a Ruby developer.

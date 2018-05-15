@@ -3,6 +3,7 @@ layout: post
 title:  "FIFO queues!"
 date:   2018-05-10 17:14:47 +0200
 categories: jekyll update
+permalink: /fifo-queues/
 ---
 
 When I was a C developer we used very frequently **FIFO queues**. **FIFO** means _first input, first output_. This kind of queues have a fixed size. When the queue is full of elements, if a new element is enqueued, the first element enqueued has to fall out (has to be returned and removed from the queue).

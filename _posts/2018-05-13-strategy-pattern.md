@@ -3,6 +3,7 @@ layout: post
 title:  "Strategy pattern and singleton methods"
 date:   2018-05-13 18:00:00 +0200
 categories: jekyll update
+permalink: /strategy-pattern/
 ---
 
 Imagine that you have a collection of objects representing _animals_. Some of them can fly and some others not. You would like to include the method `fly` in all them, although not all them can fly, so you go with the **Template Method Design Pattern**. 
