@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Strategy pattern and singleton methods"
+title:  "Strategy pattern and singleton behavior"
 date:   2018-05-13 18:00:00 +0200
 categories: jekyll update
 permalink: /strategy-pattern/
@@ -132,7 +132,7 @@ For the issue of flying animals, this last way of doing strategy design seems no
 
 But, we have seen that in this last example we have the option to change the _fly_behavior_ of an instance. How could we do this with the code of the previous solution? I will do it in the next example using a **mixin** to change the flying behavior of an instance. That means, overwrite a **singleton method**. 
 
-## Singleton methods
+## Singleton behavior
 
 But wait, a duck with 1 day of life is not able to fly, so, can a duck fly? Well, it depends. Next code will demostrate how to change this behaviour depending on the value of the instance variable `age`. 
 

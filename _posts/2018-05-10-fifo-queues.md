@@ -46,9 +46,7 @@ Adding the method `to_fifo` to the `Array` class permits us to create a new Arra
 
 ```sh
 > irb -I . -r fifo_queue.rb
-irb> ["a", 2, 3].to_fifo
-=> #<FIFOQueue: @size=3, @arr=["a", 2, 3]>
-irb> b = _
+irb> b = ["a", 2, 3].to_fifo
 => #<FIFOQueue: @size=3, @arr=["a", 2, 3]>
 irb> b.push "b"
 => "a"
