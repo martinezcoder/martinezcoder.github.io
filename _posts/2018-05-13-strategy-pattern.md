@@ -6,7 +6,7 @@ categories: jekyll update
 permalink: /strategy-pattern/
 ---
 
-Imagine that you have a collection of objects representing _animals_. Some of them can fly and some others not. You would like to include the method `fly` in all them, although not all them can fly, so you go with the **Template Method Design Pattern**. 
+Imagine that you have a collection of objects representing _animals_. Some of them can fly and some others not. You would like to include the method `fly` in all them, although not all them can fly, so you go with the **Template Method Design Pattern**.
 
 
 ```ruby
@@ -41,13 +41,13 @@ We have two options (**strategies**) to decide to include on each animal: _it ca
 ```ruby
 module Flys
   module ItFlys
-    def self.fly
+    def fly
       puts "I am flying"
     end
   end
 
   module CantFly
-    def self.fly
+    def fly
       puts "I can't fly"
     end
    end
@@ -130,40 +130,43 @@ irb> duck.fly
 
 For the issue of flying animals, this last way of doing strategy design seems not the most appropiate. All ducks fly, so I personally prefer the previous solution for this case.
 
-But, we have seen that in this last example we have the option to change the _fly_behavior_ of an instance. How could we do this with the code of the previous solution? I will do it in the next example using a **mixin** to change the flying behavior of an instance. That means, overwrite a **singleton method**. 
+But, we have seen that in this last example we have the option to change the _fly_behavior_ of an instance. How could we do this with the code of the previous solution? I will do it in the next example using a **mixin** to change the flying behavior of an instance. That means, overwrite a **singleton method**.
 
 ## Singleton behavior
 
-But wait, a duck with 1 day of life is not able to fly, so, can a duck fly? Well, it depends. Next code will demostrate how to change this behaviour depending on the value of the instance variable `age`. 
+But wait, a duck with 1 day of life is not able to fly, so, can a duck fly? Well, it depends. Next code will demostrate how to change this behaviour depending on the value of the instance variable `age`.
 
 When the duck is old enough, it can fly!
 
 
 ```ruby
-class Animal
+module Flys
+  module ItFlys
+    def fly
+      puts "I am flying"
+    end
+  end
+
+  module CantFly
+    def fly
+      puts "I can't fly"
+    end
+   end
+end
+
+class Duck
   include Flys::CantFly
 
-  attr_accessor :age
-
-  def initialize(age=0)
-    @age = age
-  end
-end
-
-class Lion < Animal
-end
-
-class Duck < Animal
   DAYS_TO_FLY = 50
 
   def initialize(age=0)
-    super(age)
+    @age = age
     @can_fly = false
     try_to_fly
   end
 
   def age=(days)
-    super(days)
+    @age = days
     try_to_fly
   end
 
@@ -171,7 +174,7 @@ class Duck < Animal
 
   def try_to_fly
     return if @can_fly
-    self.extend(Flys::ItFlys) if age >= DAYS_TO_FLY
+    self.extend(Flys::ItFlys) if @age >= DAYS_TO_FLY
   end
 end
 ```
